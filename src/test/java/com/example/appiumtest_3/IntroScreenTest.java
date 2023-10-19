@@ -16,10 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class IntroScreenTest {
 
     private AndroidDriver driver;
-    // private PORT = 4723;
-    // private HOST = "127.0.0.1";
     private IntroScreen introScreen;
-
 
     @Before
     public void setUp() throws MalformedURLException {
@@ -33,17 +30,6 @@ public class IntroScreenTest {
         desiredCapabilities.setCapability("appium:newCommandTimeout", 3600);
         desiredCapabilities.setCapability("appium:connectHardwareKeyboard", true);
 
-        // private URL getUrl(String host, String port) {
-        //     try {
-        //         return new URL(host+":"+port);
-        //     } catch (MalformedURLException e) {
-        //         e.printStackTrace();
-        //     }
-        //     return null;
-        // }
-//
-        // driver = new AndroidDriver(this.remoteUrl(HOST, PORT), desiredCapabilities);
-
         URL remoteUrl = new URL("http://127.0.0.1:4723");
 
         driver = new AndroidDriver(remoteUrl, desiredCapabilities);
@@ -52,7 +38,7 @@ public class IntroScreenTest {
 
     @Test
     public void sampleTest() {
-        assertTrue(introScreen.checkSearchField(),"Поисковое полн не активно");
+        assertTrue(introScreen.checkSearchField(),"Поисковое поле не активно");
     }
 
     @After
