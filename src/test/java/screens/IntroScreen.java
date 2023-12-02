@@ -12,7 +12,6 @@ import static wait.MyWait.myWait;
 
 public class IntroScreen {
 
-
     private static final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(IntroScreen.class));
 
     @AndroidFindBy(id = "searchTv")
@@ -66,6 +65,11 @@ public class IntroScreen {
         LOG.infoWithScreenshot("Проверка отображения блока 'Специальные предложения!'");
         scrollToSpecialOffers.click();
         return scrollToSpecialOffers.isDisplayed();
+    }
+    public class SADasd{
+        public void asdagf(){
+            adbBanner.click();
+        }
     }
 
 

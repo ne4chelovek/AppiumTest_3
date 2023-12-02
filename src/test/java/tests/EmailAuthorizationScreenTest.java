@@ -48,6 +48,7 @@ public class EmailAuthorizationScreenTest extends BaseTest {
         EmailAuthorizationScreen.touchOutside();
         EmailAuthorizationScreen.openValidation();
         DeviceTools.setWiFiToOff();
+        myWait(5).pause();
         EmailAuthorizationScreen.backMainScreenClick();
         assertTrue(EmailAuthorizationScreen.checkScreenStateView(), "Экран с предупреждением об отключенном WiFi не появился");
         DeviceTools.setWiFiToOn();

@@ -28,6 +28,7 @@ public class NumberAuthorizationScreenTest extends BaseTest{
         final String number = "0000000000";
         NumberAuthorizationScreen.touchOutside();
         NumberAuthorizationScreen.openValidation();
+        myWait(3).pause();
         NumberAuthorizationScreen.inputNumber(number);
         NumberAuthorizationScreen.submitButtonClick();
         assertTrue(NumberAuthorizationScreen.warningMessageChek(), "Предупреждение не появилось");
@@ -41,11 +42,12 @@ public class NumberAuthorizationScreenTest extends BaseTest{
         assertTrue(NumberAuthorizationScreen.warningMessageChek(), "Предупреждение не появилось");
     }
     @Test
-    @DisplayName("Проверка ввода пустого значения")
+    @DisplayName("Проверка перехода без подключения к сети")
     public void inputEmptyNumberWithDisableWiFi() {
         NumberAuthorizationScreen.touchOutside();
         NumberAuthorizationScreen.openValidation();
         DeviceTools.setWiFiToOff();
+        myWait(5).pause();
         NumberAuthorizationScreen.inputWithEmail();
         assertTrue(NumberAuthorizationScreen.checkScreenStateView(), "Экран с предупреждением об отключенном WiFi не появился");
         DeviceTools.setWiFiToOn();
